@@ -23,8 +23,12 @@ CTestTestfile.cmake  # 测试配置文件
 *.cmake
 !CMakeLists.txt      # 保留项目源码的CMakeLists.txt
 !*.cmake.in          # 保留配置文件模板（如XXXConfig.cmake.in）
-
-
+!cmake/
+!cmake/epilogue.cmake
+!cmake/parse_version.cmake
+!cmake/prelude.cmake
+!cmake/FindDBus1.cmake
+!cmake/Findfmt.cmake
 # --------------------------
 # 3. C++编译产物
 # --------------------------
