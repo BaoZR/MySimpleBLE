@@ -1,0 +1,1 @@
+This project is built upon SimpleBLE version v0.6.1, which is released under the latest MIT License. The CMake project structure has been revised, and the project is now only compatible with C++.

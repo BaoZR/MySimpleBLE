@@ -1,0 +1,69 @@
+# --------------------------
+# 1. CMake构建目录（常见命名）
+# --------------------------
+# 主流构建目录名（可根据你的习惯补充）
+build/
+build-*/       # 如build-debug、build-release
+_build/
+out/
+install/       # 若你将install目录放在项目内（如之前截图的install）
+
+
+# --------------------------
+# 2. CMake生成的配置/构建文件
+# --------------------------
+CMakeCache.txt       # CMake缓存文件
+CMakeFiles/          # CMake生成的中间目录
+Makefile             # CMake生成的Makefile（Unix类系统）
+cmake_install.cmake  # CMake安装脚本
+install_manifest.txt # 安装文件清单
+CTestTestfile.cmake  # 测试配置文件
+
+# 忽略生成的.cmake文件，但保留源码中的关键文件
+*.cmake
+!CMakeLists.txt      # 保留项目源码的CMakeLists.txt
+!*.cmake.in          # 保留配置文件模板（如XXXConfig.cmake.in）
+
+
+# --------------------------
+# 3. C++编译产物
+# --------------------------
+# 目标文件（编译中间文件）
+*.o
+*.obj
+
+# 静态库
+*.a
+*.lib
+
+# 动态库/共享库
+*.so
+*.so.*
+*.dylib  # macOS
+*.dll    # Windows
+
+# 可执行文件
+*.exe    # Windows
+*[!h|!cpp|!hpp|!cmake|!in]  # 避免误写：仅Unix类系统（可执行文件无后缀）
+
+# 调试信息文件
+*.pdb    # Windows
+core     # Linux/macOS核心转储文件
+
+
+# --------------------------
+# 4. 第三方依赖目录（CMake自动拉取的）
+# --------------------------
+_deps/  # 如CMake FetchContent/DownloadProject拉取的依赖（对应你截图中的_deps）
+
+
+# --------------------------
+# 5. 编辑器/IDE配置文件
+# --------------------------
+.vscode/
+.idea/
+*.suo       # Visual Studio
+*.user      # Visual Studio
+*.sln       # Visual Studio解决方案
+*.vcxproj   # Visual Studio项目文件
+*.vcxproj.filters
